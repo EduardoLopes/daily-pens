@@ -109,6 +109,11 @@ h2{
   font-size: 0.9em;
 }
 
+.my-twitter{
+  text-align: right;
+  font-size: 0.9em;
+}
+
 /*.tags .tag:last-child{
   border-right: 1px #ccc dotted;
 }
