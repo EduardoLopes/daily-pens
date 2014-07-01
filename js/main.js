@@ -40,10 +40,10 @@
     req.send();
   }
 
-  function createNewA(){
+  function createNewA(url){
     var newA = document.createElement('a');
 
-    newA.setAttribute('href', '#');
+    newA.setAttribute('href',  url  || '#');
 
     return newA;
   }
@@ -72,9 +72,10 @@
     </li>
   */
   function addPen(pen){
+    console.log(pen.url);
     var newLi = document.createElement('li'),
         newH2 = document.createElement('h2'),
-        newLinkToPen = createNewA(),
+        newLinkToPen = createNewA(pen.url),
         newH2Content = document.createTextNode(pen.name),
         newTags = document.createElement('div'),
         newDate = document.createElement('div'),
