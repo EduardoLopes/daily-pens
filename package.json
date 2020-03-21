@@ -1,0 +1,16 @@
+{
+  "name": "daily-pen",
+  "version": "0.1.0",
+  "description": "List of my daily pens",
+  "repository": "https://github.com/EduardoLopes/daily-pen.git",
+  "author": "EduardoLopes <EduardoLopesDS@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run parcel -p 3000 ./app/index.html",
+    "build": "yarn run parcel build ./app/index.html",
+    "watch": "yarn run parcel watch ./app/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-nightly.157"
+  }
+}

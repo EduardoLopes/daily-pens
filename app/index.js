@@ -16,7 +16,7 @@
   function getPens(callback, errorCallback) {
     var req = new XMLHttpRequest();
 
-    req.open('GET', 'pens.json', true);
+    req.open('GET', '../pens.json', true);
 
     req.onreadystatechange = function(e) {
       if(req.readyState !== 4) {
