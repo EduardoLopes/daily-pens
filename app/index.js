@@ -1,8 +1,6 @@
 import pens from "./pens.json";
 import _array from "lodash/array";
 
-console.log(pens);
-
 var querySelector = document.querySelector.bind(document),
   querySelectorAll = document.querySelectorAll.bind(document),
   $pensContainer = querySelector("#pens-container"),
