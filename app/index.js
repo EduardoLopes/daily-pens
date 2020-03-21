@@ -1,12 +1,15 @@
-import data from './pens.json';
+import pens from './pens.json';
+import _array from 'lodash/array';
 
 (function() {
   'use strict';
 
   var querySelector = document.querySelector.bind(document),
+      querySelectorAll = document.querySelectorAll.bind(document),
       $pensContainer = querySelector('#pens-container'),
-      //$filtersContainer = querySelector('#filters-container'),
-      tags = [];
+      $filtersContainer = querySelector('#filters-container'),
+      tags = [],
+      filters = [];
 
   function createAnchor(url){
     var newA = document.createElement('a');
@@ -31,13 +34,13 @@ import data from './pens.json';
 
   function createListItem(){
     var item = document.createElement('li');
-    item.classList.add('clearfix', 'js-daily-pen');
+    item.classList.add('clearfix', 'daily-pen');
 
     return item;
   }
 
   /* Generate:
-    <li class="clearfix js-daily-pen">
+    <li class="clearfix daily-pen">
       <h2 class="name">
         <a href="#"><PEN TITLE></a>
       </h2>
@@ -62,7 +65,7 @@ import data from './pens.json';
       tag = pen.trim();
       tagsContainer.appendChild( newTag( tag ) );
       //add class to filter elements by tag
-      li.classList.add( 'js-' + tag.replace(/\s/g, '-') );
+      li.classList.add( 'tag-' + tag.replace(/\s/g, '-') );
       if(tags.indexOf(tag) === -1){
         tags.push(tag);
       }
@@ -84,48 +87,91 @@ import data from './pens.json';
     $pensContainer.appendChild(li);
   }
 
-  // function addTagFilter(tag){
-  //   var tagFilterLi = document.createElement('li'),
-  //       tagFilterA = createAnchor();
+  function addTagFilter(tag){
+    var li = document.createElement('li'),
+        a = createAnchor();
 
-  //       tagFilterA.classList.add('filter');
+        a.classList.add('filter');
 
-  //       tagFilterA.appendChild( document.createTextNode( tag ) )
-  //       tagFilterLi.appendChild( tagFilterA );
+        a.setAttribute('data-filter', tag.replace(/\s/g, '-'));
 
-  //   $filtersContainer.appendChild( tagFilterLi );
-  // }
+        a.appendChild( createTextNode( tag ) )
+        li.appendChild( a );
+
+    $filtersContainer.appendChild( li );
+  }
 
   //to implement soon
-  document.onclick = function(e){
+  $filtersContainer.onclick = function(e){
 
-      var target = e.target || e.srcElement;
-          //filter;
+    var target = e.target || e.srcElement;
 
-      //filter 'a' don't work until implement filter
-      if( target.classList.contains('filter') ){
-        return false;
+    //filter 'a' don't work until implement filter
+    if( target.classList.contains('filter') === false ){
+      return false;
+    }
+
+    clearFilters();
+
+    if(filters.includes(target.getAttribute('data-filter'))){
+
+      filters = filters.filter(function(item) {
+        return item !== target.getAttribute('data-filter')
+      });
+
+      target.classList.remove('active');
+
+      console.log(filters);
+
+      if(filters.length !== 0){
+        applyFilters();
       }
 
-      // filter = element.getAttribute('data-filter');
+      return false;
+    }
 
+    filters.push(target.getAttribute('data-filter'));
+    target.classList.add('active');
+    applyFilters();
 
-      // if( !target.classList.contains('filter') ){
-      //   return
-      // }
   };
 
-  var i;
-  var pens = data;
-  //var allFilter
+  function filtersToSelectors(){
+
+    var selectors = filters.map(function(current, item, index){
+      return `.tag-${current}`
+    });
+
+    return selectors.toString();
+
+  }
+
+  function applyFilters(){
+
+    var allPens = [].slice.call(querySelectorAll('.daily-pen'));
+    var pensToShow = [].slice.call(querySelectorAll(filtersToSelectors()));
+
+    var hide = _array.difference(allPens, pensToShow);
+
+    hide.forEach(function(item){
+      item.classList.add('hide');
+    });
+
+  }
+
+  function clearFilters(){
+    var elements = querySelectorAll('.daily-pen');
+    elements.forEach(function(item){
+      item.classList.remove('hide');
+    });
+  }
 
   pens.forEach(function(pen){
     addPen( pen );
   });
 
-    //to implement soon
-    // for (var i = tags.length - 1; i >= 0; i--) {
-    //   addTagFilter( tags[i] );
-    // };
+  tags.forEach(function(item){
+    addTagFilter(item);
+  });
 
 })();

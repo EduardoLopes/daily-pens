@@ -109,9 +109,17 @@ h2{
   font-size: 0.9em;
 }
 
+.filters-container a.active{
+  background: #ccc;
+}
+
 .my-twitter{
   text-align: right;
   font-size: 0.9em;
+}
+
+.hide{
+  display: none;
 }
 
 /*.tags .tag:last-child{
