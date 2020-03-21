@@ -8,7 +8,7 @@ import data from './pens.json';
       //$filtersContainer = querySelector('#filters-container'),
       tags = [];
 
-  function createNewA(url){
+  function createAnchor(url){
     var newA = document.createElement('a');
 
     newA.setAttribute('href',  url  || '#');
@@ -16,14 +16,24 @@ import data from './pens.json';
     return newA;
   }
 
+  function createTextNode(text){
+    return document.createTextNode(text);
+  }
+
   function newTag(text){
-    var tag = createNewA(),
-        tagContent = document.createTextNode(text);
+    var tag = createAnchor();
 
     tag.classList.add('tag', 'filter');
-    tag.appendChild(tagContent);
+    tag.appendChild( createTextNode(text) );
 
     return tag;
+  }
+
+  function createListItem(){
+    var item = document.createElement('li');
+    item.classList.add('clearfix', 'js-daily-pen');
+
+    return item;
   }
 
   /* Generate:
@@ -41,46 +51,42 @@ import data from './pens.json';
   */
   function addPen(pen){
 
-    var newLi = document.createElement('li'),
-        newH2 = document.createElement('h2'),
-        newLinkToPen = createNewA(pen.url),
-        newH2Content = document.createTextNode(pen.name),
-        newTags = document.createElement('div'),
-        newDate = document.createElement('div'),
-        newDateContent = document.createTextNode(pen.date),
-        penTags = pen.tags.split(','),
-        i = 0,
+    var li = createListItem(),
+        title = document.createElement('h2'),
+        link = createAnchor(pen.url),
+        tagsContainer = document.createElement('div'),
+        dateContainer = document.createElement('div'),
         tag;
 
-    for (i = penTags.length - 1; i >= 0; i--) {
-      tag = penTags[i].trim();
-      newTags.appendChild( newTag( tag ) );
+    pen.tags.split(',').forEach(function(pen){
+      tag = pen.trim();
+      tagsContainer.appendChild( newTag( tag ) );
       //add class to filter elements by tag
-      newLi.classList.add( 'js-' + tag.replace(/\s/g, '-') );
+      li.classList.add( 'js-' + tag.replace(/\s/g, '-') );
       if(tags.indexOf(tag) === -1){
         tags.push(tag);
       }
-    };
+    });
 
     //add classes
-    newLi.classList.add('clearfix', 'js-daily-pen');
-    newH2.classList.add('name');
-    newTags.classList.add('tags-container');
-    newDate.classList.add('date');
 
-    newLinkToPen.appendChild(newH2Content);
-    newH2.appendChild(newLinkToPen);
-    newLi.appendChild(newH2);
-    newLi.appendChild(newTags);
-    newDate.appendChild(newDateContent);
-    newLi.appendChild(newDate);
+    title.classList.add('name');
+    tagsContainer.classList.add('tags-container');
+    dateContainer.classList.add('date');
 
-    $pensContainer.appendChild(newLi);
+    link.appendChild( createTextNode(pen.name) );
+    title.appendChild(link);
+    li.appendChild(title);
+    li.appendChild(tagsContainer);
+    dateContainer.appendChild( createTextNode(pen.date) );
+    li.appendChild(dateContainer);
+
+    $pensContainer.appendChild(li);
   }
 
   // function addTagFilter(tag){
   //   var tagFilterLi = document.createElement('li'),
-  //       tagFilterA = createNewA();
+  //       tagFilterA = createAnchor();
 
   //       tagFilterA.classList.add('filter');
 
@@ -109,12 +115,13 @@ import data from './pens.json';
       // }
   };
 
-    var i;
-    var pens = data;
-    //var allFilter
-    for (i = pens.length - 1; i >= 0; i--) {
-      addPen( pens[i] )
-    };
+  var i;
+  var pens = data;
+  //var allFilter
+
+  pens.forEach(function(pen){
+    addPen( pen );
+  });
 
     //to implement soon
     // for (var i = tags.length - 1; i >= 0; i--) {
