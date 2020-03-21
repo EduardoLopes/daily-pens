@@ -8,13 +8,6 @@ import data from './pens.json';
       //$filtersContainer = querySelector('#filters-container'),
       tags = [];
 
-  //trim polyfill
-  if (!String.prototype.trim) {
-    String.prototype.trim = function () {
-      return this.replace(/^\s+|\s+$/gm, '');
-    };
-  }
-
   function createNewA(url){
     var newA = document.createElement('a');
 
