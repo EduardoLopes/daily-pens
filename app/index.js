@@ -73,7 +73,7 @@ function addPen(pen) {
   tagsContainer.classList.add("tags-container");
   dateContainer.classList.add("date");
 
-  link.appendChild(createTextNode(pen.name));
+  link.appendChild(createTextNode(`#${pen.id} - ${pen.name}`));
   title.appendChild(link);
   li.appendChild(title);
   li.appendChild(tagsContainer);

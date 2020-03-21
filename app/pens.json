@@ -2,17 +2,76 @@
   "name": "Click to see Circles",
   "url": "http://codepen.io/EduardoLopes/pen/tpKah",
   "date": "07.01.2014",
-  "tags": "canvas, js"
+  "tags": "canvas, js",
+  "id": 1
 },
 {
   "name": "Simple switch using canvas",
   "url": "http://codepen.io/EduardoLopes/details/ueArb/",
   "date": "07.02.2014",
-  "tags": "canvas, js"
+  "tags": "canvas, js",
+  "id": 2
 },
 {
   "name": "Magnifying glass turn into a search form",
   "url": "http://codepen.io/EduardoLopes/pen/LFtmr",
   "date": "07.03.2014",
-  "tags": "css, form"
+  "tags": "css, form",
+  "id": 3
+},
+{
+  "name": "Random Generated Pattern",
+  "url": "https://codepen.io/EduardoLopes/pen/mpevw",
+  "date": "07.04.2014",
+  "tags": "js, canvas",
+  "id": 4
+},
+{
+  "name": "Lines ball",
+  "url": "https://codepen.io/EduardoLopes/pen/mtbun",
+  "date": "07.05.2014",
+  "tags": "js, canvas",
+  "id": 5
+},
+{
+  "name": "Particle System 01",
+  "url": "https://codepen.io/EduardoLopes/pen/yjtiE",
+  "date": "07.06.2014",
+  "tags": "js, canvas",
+  "id": 6
+},
+{
+  "name": "A rectangle stuck inside a box",
+  "url": "https://codepen.io/EduardoLopes/pen/fsghB",
+  "date": "07.07.2014",
+  "tags": "js, canvas",
+  "id": 7
+},
+{
+  "name": "SVG switch (is not pure svg)",
+  "url": "https://codepen.io/EduardoLopes/pen/muyDw",
+  "date": "07.08.2014",
+  "tags": "js, svg",
+  "id": 8
+},
+{
+  "name": "SVG switch (Using snap.svg)",
+  "url": "https://codepen.io/EduardoLopes/pen/muyDw",
+  "date": "07.08.2014",
+  "tags": "js, svg",
+  "id": 8.1
+},
+{
+  "name": "Hover effect with SVG (Using snap.svg)",
+  "url": "https://codepen.io/EduardoLopes/pen/mAqsB",
+  "date": "07.09.2014",
+  "tags": "js, svg",
+  "id": 9
+},
+{
+  "name": "A generic Infinite Runner game",
+  "url": "https://codepen.io/EduardoLopes/pen/IJnAr",
+  "date": "07.10.2014",
+  "tags": "js, svg",
+  "id": 10
 }]
