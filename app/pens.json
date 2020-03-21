@@ -1,24 +1,18 @@
 [{
-  "name": "Pen name here",
-  "url": "http://codepen.io/pen",
-  "date": "04.30.2013",
-  "tags": "js, pure css, canvas, svg"
+  "name": "Click to see Circles",
+  "url": "http://codepen.io/EduardoLopes/pen/tpKah",
+  "date": "07.01.2014",
+  "tags": "canvas, js"
 },
 {
-  "name": "Pen name here",
-  "url": "http://codepen.io/pen",
-  "date": "04.30.2013",
-  "tags": "js, canvas, svg"
+  "name": "Simple switch using canvas",
+  "url": "http://codepen.io/EduardoLopes/details/ueArb/",
+  "date": "07.02.2014",
+  "tags": "canvas, js"
 },
 {
-  "name": "Pen name here",
-  "url": "http://codepen.io/pen",
-  "date": "04.30.2013",
-  "tags": "js, pure css, svg"
-},
-{
-  "name": "Pen name here",
-  "url": "http://codepen.io/pen",
-  "date": "04.30.2013",
-  "tags": "js, pure css, canvas"
+  "name": "Magnifying glass turn into a search form",
+  "url": "http://codepen.io/EduardoLopes/pen/LFtmr",
+  "date": "07.03.2014",
+  "tags": "css, form"
 }]
