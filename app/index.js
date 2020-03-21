@@ -1,3 +1,5 @@
+import data from './pens.json';
+
 (function() {
   'use strict';
 
@@ -11,33 +13,6 @@
     String.prototype.trim = function () {
       return this.replace(/^\s+|\s+$/gm, '');
     };
-  }
-
-  function getPens(callback, errorCallback) {
-    var req = new XMLHttpRequest();
-
-    req.open('GET', '../pens.json', true);
-
-    req.onreadystatechange = function(e) {
-      if(req.readyState !== 4) {
-        return;
-      }
-
-      if([200,304].indexOf(req.status) === -1) {
-        new Error('Server responded with a status of ' + req.status);
-
-        if(errorCallback){
-          errorCallback(req.status);
-        }
-
-        return;
-      }
-
-      callback(JSON.parse(e.target.response));
-
-    };
-
-    req.send();
   }
 
   function createNewA(url){
@@ -72,7 +47,7 @@
     </li>
   */
   function addPen(pen){
-    console.log(pen.url);
+
     var newLi = document.createElement('li'),
         newH2 = document.createElement('h2'),
         newLinkToPen = createNewA(pen.url),
@@ -141,7 +116,6 @@
       // }
   };
 
-  getPens(function ok(data){
     var i;
     var pens = data;
     //var allFilter
@@ -153,11 +127,5 @@
     // for (var i = tags.length - 1; i >= 0; i--) {
     //   addTagFilter( tags[i] );
     // };
-
-  }, function error() {
-    //soon
-  });
-
-
 
 })();
