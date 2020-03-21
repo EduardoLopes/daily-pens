@@ -57,6 +57,9 @@ function addPen(pen) {
     dateContainer = document.createElement("div"),
     tag;
 
+  link.setAttribute("rel", "noopener noreferrer");
+  link.setAttribute("target", "_blank");
+
   pen.tags.split(",").forEach(function(pen) {
     tag = pen.trim();
     tagsContainer.appendChild(newTag(tag));
