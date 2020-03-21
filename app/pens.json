@@ -1,76 +1,76 @@
 [{
   "name": "Click to see Circles",
-  "url": "http://codepen.io/EduardoLopes/pen/tpKah",
+  "codepen_id": "tpKah",
   "date": "07.01.2014",
   "tags": "canvas, js",
   "id": 1
 },
 {
   "name": "Simple switch using canvas",
-  "url": "http://codepen.io/EduardoLopes/details/ueArb/",
+  "codepen_id": "ueArb",
   "date": "07.02.2014",
   "tags": "canvas, js",
   "id": 2
 },
 {
   "name": "Magnifying glass turn into a search form",
-  "url": "http://codepen.io/EduardoLopes/pen/LFtmr",
+  "codepen_id": "LFtmr",
   "date": "07.03.2014",
   "tags": "css, form",
   "id": 3
 },
 {
   "name": "Random Generated Pattern",
-  "url": "https://codepen.io/EduardoLopes/pen/mpevw",
+  "codepen_id": "mpevw",
   "date": "07.04.2014",
   "tags": "js, canvas",
   "id": 4
 },
 {
   "name": "Lines ball",
-  "url": "https://codepen.io/EduardoLopes/pen/mtbun",
+  "codepen_id": "mtbun",
   "date": "07.05.2014",
   "tags": "js, canvas",
   "id": 5
 },
 {
   "name": "Particle System 01",
-  "url": "https://codepen.io/EduardoLopes/pen/yjtiE",
+  "codepen_id": "yjtiE",
   "date": "07.06.2014",
   "tags": "js, canvas",
   "id": 6
 },
 {
   "name": "A rectangle stuck inside a box",
-  "url": "https://codepen.io/EduardoLopes/pen/fsghB",
+  "codepen_id": "fsghB",
   "date": "07.07.2014",
   "tags": "js, canvas",
   "id": 7
 },
 {
   "name": "SVG switch (is not pure svg)",
-  "url": "https://codepen.io/EduardoLopes/pen/muyDw",
+  "codepen_id": "muyDw",
   "date": "07.08.2014",
   "tags": "js, svg",
   "id": 8
 },
 {
   "name": "SVG switch (Using snap.svg)",
-  "url": "https://codepen.io/EduardoLopes/pen/muyDw",
+  "codepen_id": "muyDw",
   "date": "07.08.2014",
   "tags": "js, svg",
   "id": 8.1
 },
 {
   "name": "Hover effect with SVG (Using snap.svg)",
-  "url": "https://codepen.io/EduardoLopes/pen/mAqsB",
+  "codepen_id": "mAqsB",
   "date": "07.09.2014",
   "tags": "js, svg",
   "id": 9
 },
 {
   "name": "A generic Infinite Runner game",
-  "url": "https://codepen.io/EduardoLopes/pen/IJnAr",
+  "codepen_id": "IJnAr",
   "date": "07.10.2014",
   "tags": "js, svg",
   "id": 10
