@@ -9,7 +9,7 @@
     "dev": "yarn run parcel -p 3000 ./app/index.html",
     "build": "yarn run parcel build ./app/index.html",
     "watch": "yarn run parcel watch ./app/index.html",
-    "deploy": "yarn run build && yarn run gh-pages -d dist/browser"
+    "deploy": "DEL /F/Q/S dist > NUL && yarn run build && yarn run gh-pages -d dist/browser"
   },
   "targets": {
     "browser": {
