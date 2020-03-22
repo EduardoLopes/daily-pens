@@ -1223,6 +1223,13 @@
   dependencies:
     "@parcel/types" "2.0.0-nightly.159+59d4d6eb"
 
+"@parcel/plugin@^2.0.0-alpha.3":
+  version "2.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.0.0-alpha.3.tgz#ff9215d0c522ff60692aca7ef6abaa95243f564a"
+  integrity sha512-2nfjd7ujL042gP7ssJ4JRyxEirp5Fuz+Vf4sk4aky3oWVuY9YmUqce0UNUMaIlh911xERo5uagy1jYOSa7gp6g==
+  dependencies:
+    "@parcel/types" "^2.0.0-alpha.3"
+
 "@parcel/reporter-bundle-analyzer@2.0.0-nightly.1781+59d4d6eb":
   version "2.0.0-nightly.1781"
   resolved "https://registry.yarnpkg.com/@parcel/reporter-bundle-analyzer/-/reporter-bundle-analyzer-2.0.0-nightly.1781.tgz#5195d80962bbfe425169bf543c91e88413f3d6c0"
@@ -1425,6 +1432,13 @@
   dependencies:
     "@parcel/plugin" "2.0.0-nightly.159+59d4d6eb"
 
+"@parcel/transformer-less@^2.0.0-alpha.3":
+  version "2.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-less/-/transformer-less-2.0.0-alpha.3.tgz#dd2fb90caaf8310f0769a1ec06a81bb33475853b"
+  integrity sha512-qUaEVfH3kgi3DD0xlra1VKVZWABfHERyMwkBMOAhlseU8EmSyQK5Y90j1MNvDkhcmS33vJ6JSrTtSLm/wYca2g==
+  dependencies:
+    "@parcel/plugin" "^2.0.0-alpha.3"
+
 "@parcel/transformer-mdx@2.0.0-nightly.1781+59d4d6eb":
   version "2.0.0-nightly.1781"
   resolved "https://registry.yarnpkg.com/@parcel/transformer-mdx/-/transformer-mdx-2.0.0-nightly.1781.tgz#952a9ecde4027919953af6889bdc545917c4957d"
@@ -1555,6 +1569,11 @@
   version "2.0.0-nightly.159"
   resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-nightly.159.tgz#be2d3d7336abcae228fb8511a0f4aa6a3b5119a7"
   integrity sha512-hvyDL0L1rGkzjB/Foe6mEIrhoFldUsZSkCmT/5/cc0btNmcEpVpoqFNJgJedZp7mPRFZU/91awqyKb4G3Fp8UA==
+
+"@parcel/types@^2.0.0-alpha.3":
+  version "2.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-alpha.3.tgz#b2911c0e3b7756b70cbfc79a432b464b41d214c1"
+  integrity sha512-n4c346lpwhEUFJ3Xv4DUAATLnAqdKkNfEqFW+bfnS8WFBl3bUlaJW4JqHYQ63enoEvMKoD5Rs9/WrhqZ71X8Dg==
 
 "@parcel/utils@2.0.0-nightly.159+59d4d6eb":
   version "2.0.0-nightly.159"

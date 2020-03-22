@@ -29,6 +29,15 @@ function newTag(text) {
   return tag;
 }
 
+function createTagSpan(text) {
+  var span = document.createElement("span");
+
+  span.classList.add("tag");
+  span.appendChild(createTextNode(text));
+
+  return span;
+}
+
 function createListItem() {
   var item = document.createElement("li");
   item.classList.add("clearfix", "daily-pen");
@@ -36,16 +45,20 @@ function createListItem() {
   return item;
 }
 
-/* Generate:
-  <li class="clearfix daily-pen">
+/* Generate this:
+  <li class="clearfix daily-pen tag-canvas">
     <h2 class="name">
-      <a href="#"><PEN TITLE></a>
+      <a href="https://codepen.io/EduardoLopes/pen/tpKah" rel="noopener noreferrer" target="_blank">
+        #1 - Click to see Circles
+      </a>
     </h2>
-    <div class="tags-container">
-      <a href="#" class="tag"><TAG NAME></a>*pen.tags
-    </div>
     <div class="date">
-      <DATE>
+      07.01.2014
+    </div>
+    <div class="tags-container clearfix">
+      <span class="tag">
+        canvas
+      </span>
     </div>
   </li>
 */
@@ -62,7 +75,7 @@ function addPen(pen) {
 
   pen.tags.split(",").forEach(function(pen) {
     tag = pen.trim();
-    tagsContainer.appendChild(newTag(tag));
+    tagsContainer.appendChild(createTagSpan(tag));
     //add class to filter elements by tag
     li.classList.add("tag-" + tag.replace(/\s/g, "-"));
     if (tags.indexOf(tag) === -1) {
@@ -73,15 +86,15 @@ function addPen(pen) {
   //add classes
 
   title.classList.add("name");
-  tagsContainer.classList.add("tags-container");
+  tagsContainer.classList.add("tags-container", "clearfix");
   dateContainer.classList.add("date");
 
   link.appendChild(createTextNode(`#${pen.id} - ${pen.name}`));
   title.appendChild(link);
   li.appendChild(title);
-  li.appendChild(tagsContainer);
   dateContainer.appendChild(createTextNode(pen.date));
   li.appendChild(dateContainer);
+  li.appendChild(tagsContainer);
 
   $pensContainer.appendChild(li);
 }

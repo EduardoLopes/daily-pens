@@ -1,0 +1,191 @@
+@import "./normalize.css";
+
+@margin: 20px;
+
+//ant.design colors;
+
+@gray-1: #ffffff;
+@gray-2: #fafafa;
+@gray-3: #f5f5f5;
+@gray-4: #f0f0f0;
+@gray-5: #d9d9d9;
+@gray-6: #bfbfbf;
+@gray-7: #8c8c8c;
+@gray-8: #595959;
+@gray-9: #434343;
+@gray-10: #262626;
+@gray-11: #1f1f1f;
+@gray-12: #141414;
+@gray-13: #000000;
+
+@purple-1: #f9f0ff;
+@purple-2: #efdbff;
+@purple-3: #d3adf7;
+@purple-4: #b37feb;
+@purple-5: #9254de;
+@purple-6: #722ed1;
+@purple-7: #531dab;
+@purple-8: #391085;
+@purple-9: #22075e;
+@purple-10: #120338;
+
+/*clear fix*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/****************************/
+
+body{
+  background: @gray-1;
+  color: @gray-8;
+  font-family: Helvetica, Arial, sans-serif;
+  overflow-y: scroll;
+}
+
+a, li{
+  -webkit-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+a{
+  text-decoration: none;
+  color: @purple-6;
+}
+
+a:hover{
+  color: @purple-5;
+}
+
+a:active, a:focus{
+  color: @purple-4;
+}
+
+.container{
+  width: 70%;
+  margin: 0 auto;
+}
+
+ul, li{
+  padding: 0;
+  list-style: none;
+}
+
+h1{
+  padding: 10px;
+  font-size: 3em;
+  color: @purple-6;
+  margin: @margin;
+}
+
+.about{
+  width: 50%;
+  margin: 0 auto;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+.my-twitter{
+  text-align: right;
+  font-size: 0.9em;
+  padding: @margin 0;
+}
+
+.date{
+  padding: 10px;
+  font-size: 0.8em;
+  color: @gray-6;
+}
+
+.filters-container{
+
+  padding: 0;
+
+  li{
+    display: inline-block;
+  }
+
+  a{
+    background: @gray-3;
+    padding: 5px 10px;
+    margin: 0 5px 5px 0;
+    line-height: 30px;
+    display: block;
+  }
+
+  a.active{
+    background: @purple-6;
+    color: @gray-2;
+  }
+
+}
+
+#pens-container{
+
+  h2{
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    font-size: 1.2em;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  li{
+    padding: @margin 0;
+    border-bottom: 1px @gray-6 dotted;
+  }
+
+  li:hover{
+    background: @gray-2;
+  }
+
+  .tags-container {
+
+    .tag{
+      background: @gray-3;
+      font-size: 0.8rem;
+      color: @gray-7;
+      margin-left: 5px;
+      padding: 10px;
+      font-size: 0.9em;
+      float: left;
+    }
+
+  }
+
+}
+
+.footer{
+  font-size: 0.8rem;
+  text-align: center;
+  padding: @margin * 2 0;
+}
+
+@media (max-width:620px) {
+  .container{
+    width: 95%;
+  }
+}
+
+@media (max-width:900px) {
+
+  .about{
+    width: 100%;
+  }
+
+}
+
+@media (min-width:1200px) {
+  .container {
+    width: 960px;
+  }
+}
+
+
+/****************************/
+
