@@ -8,10 +8,25 @@
   "scripts": {
     "dev": "yarn run parcel -p 3000 ./app/index.html",
     "build": "yarn run parcel build ./app/index.html",
-    "watch": "yarn run parcel watch ./app/index.html"
+    "watch": "yarn run parcel watch ./app/index.html",
+    "deploy": "yarn run build && yarn run gh-pages -d dist/browser"
+  },
+  "targets": {
+    "browser": {
+      "publicUrl": "./"
+    }
+  },
+  "packagers": {
+    "*.css": "@parcel/packager-css"
+  },
+  "transformers": {
+    "*.less": ["@parcel/transformer-less"]
   },
   "devDependencies": {
     "@parcel/transformer-less": "^2.0.0-alpha.3",
+    "@parcel/packager-css": "^2.0.0-alpha.3",
+    "gh-pages": "^2.2.0",
+    "less": "^3.11.1",
     "parcel": "^2.0.0-nightly.157"
   },
   "dependencies": {

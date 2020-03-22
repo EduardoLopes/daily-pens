@@ -117,6 +117,8 @@ function addTagFilter(tag) {
 $filtersContainer.onclick = function(e) {
   var target = e.target || e.srcElement;
 
+  e.preventDefault();
+
   if (target.classList.contains("filter") === false) {
     return false;
   }
